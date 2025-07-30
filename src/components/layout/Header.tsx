@@ -8,7 +8,7 @@ import { Switch } from "@/components/ui/switch";
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [lottieData, setLottieData] = useState<any>(null);
+  const [lottieData, setLottieData] = useState<object | null>(null);
   const [darkMode, setDarkMode] = useState(() => {
     if (typeof window !== "undefined") {
       return document.documentElement.classList.contains("dark");
