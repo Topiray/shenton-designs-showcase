@@ -62,6 +62,33 @@ This project is built with:
 
 ## How can I deploy this project?
 
+### For GitHub Pages (Recommended for Custom Domains)
+
+This project now includes Static Site Generation (SSG) to handle direct URL access on GitHub Pages.
+
+**Build Command:**
+```bash
+npm run build:ssg
+```
+
+This will:
+1. Build the React application
+2. Generate static HTML files for each route
+3. Copy the 404.html file for GitHub Pages compatibility
+
+**Deploy to GitHub Pages:**
+1. Push your code to GitHub
+2. Go to Settings > Pages
+3. Set source to "GitHub Actions" or "Deploy from a branch"
+4. Use the `dist` folder as your build output
+
+**Why SSG is needed:**
+- When someone types `https://mshenton.com/projects/rentalmaster` directly in the browser, GitHub Pages looks for a physical file at that path
+- Without SSG, it returns a 404 because React Router handles routing client-side
+- With SSG, we generate static HTML files for each route, so direct URL access works
+
+### For Lovable
+
 Simply open [Lovable](https://lovable.dev/projects/daf45540-f7f5-42f6-9829-6278b8093e9c) and click on Share -> Publish.
 
 ## Can I connect a custom domain to my Lovable project?
